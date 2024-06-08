@@ -24,16 +24,16 @@
 `streamlit run chat_ui.py`
 
 👇问答系统的UI界面展示
-![image](.\imgs\chat_ui.jpg)
+![image](./imgs/chat_ui.jpg)
 
 **2、启动neo4j的基础上，在项目目录下打开终端，运行：**
 
 `python chatbot_graph.py`
 
 👇问答运行过程的终端展示
-![image](.\imgs\match_chat.jpg)
+![image](./imgs/match_chat.jpg)
 
-![image](.\imgs\nn_chat.jpg)
+![image](./imgs/nn_chat.jpg)
 
 
 
@@ -57,14 +57,17 @@
 ① 基于模板匹配的问答系统
 
     cd template_match 
-    python chat_graph.py
+    python chatbot_graph.py
 
 ② 基于神经网络的问答系统
 
-    python chat_graph.py
+在使用基于神经网络之前，需要问题分类的模型文件，下载链接（百度网盘）👉：[训练好的BERT模型，用于问题分类](https://pan.baidu.com/s/1uPPGdoyJ3ZLvQoCegvpzTw?pwd=6666)
+
+    python chatbot_graph.py
 
 ③ 问答系统可视化界面
-    python chat_graph.py
+   
+    streamlit run chat_ui.py
 
 
 
@@ -73,7 +76,7 @@
 ### 1、历史知识图谱构建
 #### 1.1 业务驱动的知识图谱构建框架
 
-![image](.\imgs\kg_route.png)
+![image](./imgs/kg_route.png)
 
 #### 1.2 项目文件
 **👇 主要文件夹介绍**
@@ -99,9 +102,9 @@
 
 1.3.1 neo4j图数据库存储规模
 
-![image](.\imgs\kg_1.jpg)
+![image](./imgs/kg_1.jpg)
 
-![image](.\imgs\kg_2.jpg)
+![image](./imgs/kg_2.jpg)
 
 
 
