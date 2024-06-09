@@ -1,11 +1,12 @@
 # QASysOnHistoryKnowledgeGraph
 该项目基于刘焕勇老师[QABasedOnMedicaKnowledgeGraph](https://github.com/liuhuanyong/QASystemOnMedicalKG)，和对象🐷🐷一起搭建的以历史为中心的小规模历史领域知识图谱，以该知识图谱完成自动问答与分析服务👨‍💻。
-参考的历史人物网站为[历史人物网](https://www.lishirenwu.com/)以及百度百科🖥。
+参考的历史人物网站为[历史人物网](https://www.lishirenwu.com/)以及[百度百科](https://baike.baidu.com/)🖥。
 
 ## 一、项目介绍
 
 知识图谱是目前自然语言处理的一个热门方向，我们团队依次学习了**命名实体识别、BERT模型分类、Neo4j基本操作以及爬虫**。
-本项目立足历史领域，以垂直型历史网站为数据来源，以历史人物为核心，构建起一个包含9类总计7568个的知识实体，8类总计6890个的实体关系的知识图谱。
+本项目立足历史领域，以垂直型历史网站为数据来源，以历史人物为核心，构建起一个包含9类总计7568个知识实体，8类总计6890个实体关系的知识图谱。
+
 😀 本项目将包括以下两部分的内容：
 
 1) 基于历史网站数据的历史人物知识图谱构建
@@ -21,14 +22,14 @@
 
 **1、启动neo4j的基础上，在项目目录下打开终端，运行：**
 
-`streamlit run chat_ui.py`
+    streamlit run chat_ui.py
 
 👇问答系统的UI界面展示
 ![image](./imgs/chat_ui.jpg)
 
 **2、启动neo4j的基础上，在项目目录下打开终端，运行：**
 
-`python chatbot_graph.py`
+    python chatbot_graph.py
 
 👇问答运行过程的终端展示
 ![image](./imgs/match_chat.jpg)
@@ -41,12 +42,18 @@
 
 **温馨提示**：因为基于CPU进行神经网络调用，偶尔会比较耗时，注意看终端输入，也可以将代码中的print取消注释，查看细节。
 
-1、配置要求：配置neo4j数据库及相应的python依赖包。neo4j数据库用户名密码记住，并修改相应文件。
-具体安装的参考链接如下：[超详细neo4j安装教程](https://blog.csdn.net/qq_38335648/article/details/115027676)
+1、配置要求：配置neo4j数据库及相应python依赖包。neo4j数据库用户名密码记住，记得修改相应文件的内容：
+
+    # 修改文件：answer_search.py & build_historicalgraph.py & update_nodeAttribute.py
+    self.g = Graph("bolt://neo4j:password@localhost:7687", auth=("neo4j", "xxxxxxx"))。
+
+这是neo4j配置的博客，参考链接如下👏[超详细neo4j安装教程](https://blog.csdn.net/qq_38335648/article/details/115027676)
 
 核心安装包括：JDK、neo4j、py2neo、torch、streamlit等，**需要注意版本问题**
 
 2、参考环境：本人的项目环境为：`JDK17+neo4j5.20+python3.11+py2neo2021.2.4+requirements.txt`等，请读者根据自身情况进行环境的配置
+
+如遇到问题，详细配置过程可参考这篇博客👏[知识图谱环境配置](https://blog.csdn.net/weixin_40539807/article/details/105691219)
 
 3、知识图谱数据导入，导入的数据较快，估计大约5分钟能完成。在当前目录打开终端运行：
 
@@ -61,7 +68,7 @@
 
 ② 基于神经网络的问答系统
 
-在使用基于神经网络之前，需要问题分类的模型文件，下载链接（百度网盘）👉：[训练好的BERT模型，用于问题分类](https://pan.baidu.com/s/1uPPGdoyJ3ZLvQoCegvpzTw?pwd=6666)
+在使用基于神经网络之前，需要问题分类的模型文件，**放在models文件夹内**，下载链接（百度网盘）👉：[训练好的BERT模型，用于问题分类](https://pan.baidu.com/s/1uPPGdoyJ3ZLvQoCegvpzTw?pwd=6666)
 
     python chatbot_graph.py
 
