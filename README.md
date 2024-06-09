@@ -68,7 +68,9 @@
 
 ② 基于神经网络的问答系统
 
-在使用基于神经网络之前，需要问题分类的模型文件，**放在models文件夹内**，下载链接（百度网盘）👉：[训练好的BERT模型，用于问题分类](https://pan.baidu.com/s/1uPPGdoyJ3ZLvQoCegvpzTw?pwd=6666)
+在使用基于神经网络之前，需要问题分类的模型文件，**放在models文件夹内**
+
+模型文件的下载链接（百度网盘）👉：[训练好的BERT模型，用于问题分类](https://pan.baidu.com/s/1uPPGdoyJ3ZLvQoCegvpzTw?pwd=6666)
 
     python chatbot_graph.py
 
